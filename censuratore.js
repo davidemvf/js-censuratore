@@ -2,12 +2,21 @@
 // - Restituisce il testo con xxx al posto delle parole censurate.
 // - Stampa un “badword index” calcolato come il numero di parole censurate su il numero di parole totali
 
-var lorem = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
-var censurate = "sit cupidatat ex ea sunt culpa";
+//tramite prompt dò la possibilità all'utente di inserire un testo e le parole da censurare; richiamo inoltre la funzione
+var lorem = prompt("Inserire il testo:");
+var censurate = prompt("Inserire parole da censurare:");
+
+//richiamo la funzione
+censuratore(lorem, censurate);
+
+
+// funzione utilizzata:
+
+function censuratore(testo, censure) {
 
 // converto il testo in array e controllo se uno dei suoi elementi è contenuto nell' array delle parole censurate. Inizializzo la variabile sostitute per contare il numero di parole censurate
-var testoArray = lorem.split(" ");
-var censArray = censurate.split(" ");
+var testoArray = testo.split(" ");
+var censArray = censure.split(" ");
 var sostituite = 0;
 
 // censuro le badwords
@@ -23,9 +32,13 @@ var testoCensurato = testoArray.join(" ");
 
 // visualizzo tramite console
 console.log(testoArray);
-console.log(testoCensurato);
-console.log(sostituite);
+console.log("Testo censurato:", testoCensurato);
+console.log("Numero di parole sostitute:", sostituite);
 
 // calcolo e visualizzo il badword index
-var index = (sostituite / lorem.length);
-console.log(index);
+var index = (sostituite / testo.length);
+console.log("Badword index:", index);
+
+return testoCensurato;
+
+}
