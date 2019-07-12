@@ -2,7 +2,7 @@
 // - Restituisce il testo con xxx al posto delle parole censurate.
 // - Stampa un “badword index” calcolato come il numero di parole censurate su il numero di parole totali
 
-//tramite prompt dò la possibilità all'utente di inserire un testo e le parole da censurare; richiamo inoltre la funzione
+//tramite prompt dò la possibilità all'utente di inserire un testo e le parole da censurare; 
 var lorem = prompt("Inserire il testo:");
 var censurate = prompt("Inserire parole da censurare:");
 
